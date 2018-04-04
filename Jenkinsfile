@@ -10,6 +10,7 @@ pipeline {
       }
       steps {
         sh 'gem install bundler'
+        sh 'bundle config build.nokogiri --use-system-libraries'
         sh 'bundle install'
       }
     }
