@@ -1,15 +1,15 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'node:7-alpine'
+    }
+    
+  }
   stages {
     stage('Prepare gems') {
       agent any
       steps {
-        sh 'ruby -v'
-      }
-    }
-    stage('Rspec') {
-      steps {
-        sh '/bin/bash && bundle exec rspec'
+        sh 'node --version'
       }
     }
   }
