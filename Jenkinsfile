@@ -1,13 +1,13 @@
 pipeline {
-  agent {
-    docker {
-      image 'node:7-alpine'
-    }
-    
-  }
+  agent any
   stages {
     stage('Prepare gems') {
-      agent any
+      agent {
+        docker {
+          image 'node:7-alpine'
+        }
+        
+      }
       steps {
         sh 'node --version'
       }
