@@ -9,7 +9,8 @@ pipeline {
         
       }
       steps {
-        sh 'ruby -v'
+        sh 'gem install bundler'
+        sh 'bundle install'
       }
     }
   }
