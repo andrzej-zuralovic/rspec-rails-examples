@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Rspec') {
       steps {
-        sh 'bundle exec rspec'
+        sh 'gem -v'
       }
     }
   }
