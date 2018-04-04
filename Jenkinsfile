@@ -1,14 +1,18 @@
 pipeline {
   agent any
   stages {
-    stage('Hello') {
+    stage('Prepare gems') {
       steps {
-        sh 'gem -v'
+        sh '''#!/bin/bash
+gem install bundler'''
+        sh '''#!/bin/bash
+bundle install'''
       }
     }
     stage('Rspec') {
       steps {
-        sh 'gem isntall bundler'
+        sh '''#!/bin/bash
+bundle exec rspec'''
       }
     }
   }
