@@ -3,7 +3,12 @@ pipeline {
   stages {
     stage('Hello') {
       steps {
-        sh 'echo \'Helo word\''
+        sh 'bundle install'
+      }
+    }
+    stage('Rspec') {
+      steps {
+        sh 'bundle exec rspec'
       }
     }
   }
