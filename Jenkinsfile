@@ -4,12 +4,12 @@ pipeline {
     stage('Prepare gems') {
       agent {
         docker {
-          image 'node:7-alpine'
+          image 'ruby:2.5.0'
         }
         
       }
       steps {
-        sh 'node --version'
+        sh 'ruby -v'
       }
     }
   }
