@@ -4,8 +4,7 @@ pipeline {
     stage('Prepare gems') {
       agent any
       steps {
-        sh '/bin/bash && gem install bundler'
-        sh '/bin/bash && bundle install'
+        sh 'echo $USER'
       }
     }
     stage('Rspec') {
