@@ -3,12 +3,12 @@ pipeline {
   stages {
     stage('Hello') {
       steps {
-        sh 'bundle install'
+        sh 'gem -v'
       }
     }
     stage('Rspec') {
       steps {
-        sh 'gem -v'
+        sh 'gem isntall bundler'
       }
     }
   }
