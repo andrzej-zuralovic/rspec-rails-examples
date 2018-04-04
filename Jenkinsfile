@@ -2,9 +2,14 @@ pipeline {
   agent any
   stages {
     stage('Prepare gems') {
-      agent any
+      agent {
+        docker {
+          image 'ruby:2.5.0'
+        }
+        
+      }
       steps {
-        sh 'echo $USER'
+        sh 'ruby -v'
       }
     }
     stage('Rspec') {
