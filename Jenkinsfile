@@ -3,7 +3,7 @@ node('docker') {
     stage 'start database'
     
     docker.image('redis:3.0.7-alpine').withRun { c ->
-        def ip = hostIp(c)
+        def ip = '127.0.0.1'
         
         stage 'client set'
         
@@ -24,7 +24,3 @@ node('docker') {
         }
     }
 }
-
-def hostIp(container) {
-  sh "docker inspect -f {{.NetworkSettings.IPAddress}} ${container.id} > host.ip"
-  readFile('host.ip').trim()
