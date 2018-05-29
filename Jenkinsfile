@@ -14,13 +14,8 @@ node {
       }
 
       stage("Build package") {
-        sh "bundle exec rake build:deb"
+        sh "bundle exec rake rspec"
       }
-
-      stage("Archive package") {
-        archive (includes: 'pkg/*.deb')
-      }
-
-   }
+    }
   }
 }
